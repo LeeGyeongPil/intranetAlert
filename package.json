@@ -1,0 +1,69 @@
+{
+  "name": "alertmsg",
+  "productName": "인트라넷알림",
+  "version": "1.0.0",
+  "description": "My Electron application description",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\"",
+    "build": "electron-builder --win portable --x64"
+  },
+  "keywords": [],
+  "author": {
+    "name": "[모듈개발1] 이경필",
+    "email": "errormeta@gmail.com"
+  },
+  "license": "MIT",
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "alertmsg"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  },
+  "dependencies": {
+    "charset": "^1.0.1",
+    "electron-squirrel-startup": "^1.0.0",
+    "iconv-lite": "^0.6.3",
+    "node-html-parser": "^5.2.0",
+    "node-notifier": "^10.0.0",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.61",
+    "@electron-forge/maker-deb": "^6.0.0-beta.61",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.61",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.61",
+    "@electron-forge/maker-zip": "^6.0.0-beta.61",
+    "electron-builder": "^22.14.5",
+    "electron": "16.0.5"
+  },
+  "build": {
+    "asar": false,
+    "files": ["!.vscode${/*}"]
+  }
+}
